@@ -82,4 +82,4 @@ print(f"After cleaning data, the dataset has: {len(concentrated_df_b)} rows")
 print(f"After Residential filtering, the dataset has: {len(concentrated_df_c)} rows")
 
 #Export the dataframe to the csv file
-concentrated_df_c.to_csv("listing_cleaned_dataframe.csv",index=False)
+concentrated_df_c.to_csv("listing.csv",index=False)
