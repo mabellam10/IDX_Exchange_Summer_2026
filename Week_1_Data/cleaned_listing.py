@@ -74,7 +74,7 @@ print(f"There are {len(concentrated_df_c)} rows in total after Residential filte
 output_path = listing_folders.parent / ("Cleaned_Listing_Dataset.csv")
 print(f"Successfully saved clean dataset to {output_path}")
 
-#Summary
+#Description of the dataframe
 print("\n")
 print(f"Original_Listing folder has: {len(listing_files)} files")
 print(f"Concentrated_df has: {len(concentrated_df)} rows")
@@ -82,7 +82,4 @@ print(f"After cleaning data, the dataset has: {len(concentrated_df_b)} rows")
 print(f"After Residential filtering, the dataset has: {len(concentrated_df_c)} rows")
 
 #Export the dataframe to the csv file
-concentrated_df_c.to_csv(
-    "listing_cleaned_dataframe.csv",
-    index=False
-)
+concentrated_df_c.to_csv("listing_cleaned_dataframe.csv",index=False)
