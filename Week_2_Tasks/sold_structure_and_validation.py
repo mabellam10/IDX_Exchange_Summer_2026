@@ -80,8 +80,3 @@ if numeric_features:
     numeric_distribution_summary.to_csv("sold_numeric_distribution_summary.csv")
 
 print("\nStructure and validation of Sold dataset are completed!")
-
-
-
-
-
