@@ -165,7 +165,3 @@ if numeric_features_2:
     numeric_distribution_summary_2.to_csv("listing_numeric_distribution_summary.csv")
 
 print("\nStructure and validation of Listing dataset are completed!")
-
-
-
-
