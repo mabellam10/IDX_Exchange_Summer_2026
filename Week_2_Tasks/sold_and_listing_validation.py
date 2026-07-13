@@ -203,7 +203,7 @@ for col in numeric_fields_2:
         print(listing[col].describe(
             percentiles=[0.10,0.25,0.50,0.75,0.90])
         )
-        #Histogram for numeric distribution of Sold
+        #Histogram for numeric distribution of Listing
         plt.figure(figsize=(10, 4))
         plt.hist(sold[col],bins=20, color="skyblue", edgecolor="black")
         plt.title(f"Histogram of {col}")
@@ -213,7 +213,7 @@ for col in numeric_fields_2:
         plt.savefig(f"{col}_listing_histogram.png")
         plt.show()
 
-        #Boxplot for numeric distribution of Sold
+        #Boxplot for numeric distribution of Listing
         plt.figure(figsize=(12, 4))
         plt.boxplot(listing[col].dropna(), vert=False)
         box_props = dict(facecolor="skyblue", color="black"),
