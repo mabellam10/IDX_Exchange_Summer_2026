@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 #STRUCTURE AND VALIDATION FOR SOLD'S FILES
 
@@ -70,10 +71,43 @@ for column in numeric_distribution:
 
 if numeric_features:
     numeric_distribution_summary = sold[numeric_features].describe(
-        percentiles = [0.10, 0.25, 0.50, 0.60, 0.75, 0.90, 0.95]
+        percentiles = [0.10, 0.25, 0.50, 0.60, 0.75, 0.90,0.95]
     )
 print(numeric_distribution_summary)
 
+numeric_fields = [
+    'ClosePrice', 'ListPrice','OriginalListPrice','Living Area',
+    'LotSizeAcres','BedroomsTotal', 'BathroomsTotalInteger',
+    'DaysOnMarket','YearBuilt'
+]
+for col in numeric_fields:
+    if col in sold.columns:
+        print(f"\n===|Numeric Distribution Review|===")
+        print(f"Column:{col}")
+        print(sold[col].describe(
+            percentiles=[0.10,0.25,0.50,0.75,0.90])
+        )
+        #Histogram for numeric distribution of Sold
+        plt.figure(figsize=(10, 4))
+        plt.hist(sold[col],bins=20, color="skyblue", edgecolor="black")
+        plt.title(f"Histogram of {col}")
+        plt.xlabel(col)
+        plt.ylabel("Value")
+        plt.tight_layout()
+        plt.savefig(f"{col}_sold_histogram.png")
+        plt.show()
+
+        #Boxplot for numeric distribution of Sold
+        plt.figure(figsize=(12, 4))
+        plt.boxplot(sold[col].dropna(), vert=False)
+        box_props = dict(facecolor="skyblue", color="black"),
+        median_props = dict(color="red", linewidth=1.5),
+        plt.title(f"Boxplot of {col}")
+        plt.tight_layout()
+        plt.savefig(f"{col}_sold_boxplot.png")
+        plt.show()
+
+print(sold.head())
 #PART 5: SAVE THE CSV FILES
 missing_report.to_csv("sold_missing_value_report.csv", index=False)
 high_missing.to_csv("sold_high_missing.csv", index=False)
@@ -157,6 +191,38 @@ if numeric_features_2:
     )
 print(numeric_distribution_summary_2)
 
+numeric_fields_2 = [
+    'ClosePrice', 'ListPrice','OriginalListPrice','Living Area',
+    'LotSizeAcres','BedroomsTotal', 'BathroomsTotalInteger',
+    'DaysOnMarket','YearBuilt'
+]
+for col in numeric_fields_2:
+    if col in listing.columns:
+        print(f"\n===|Numeric Distribution Review|===")
+        print(f"Column:{col}")
+        print(listing[col].describe(
+            percentiles=[0.10,0.25,0.50,0.75,0.90])
+        )
+        #Histogram for numeric distribution of Sold
+        plt.figure(figsize=(10, 4))
+        plt.hist(sold[col],bins=20, color="skyblue", edgecolor="black")
+        plt.title(f"Histogram of {col}")
+        plt.xlabel(col)
+        plt.ylabel("Value")
+        plt.tight_layout()
+        plt.savefig(f"{col}_listing_histogram.png")
+        plt.show()
+
+        #Boxplot for numeric distribution of Sold
+        plt.figure(figsize=(12, 4))
+        plt.boxplot(listing[col].dropna(), vert=False)
+        box_props = dict(facecolor="skyblue", color="black"),
+        median_props = dict(color="red", linewidth=1.5),
+        plt.title(f"Boxplot of {col}")
+        plt.tight_layout()
+        plt.savefig(f"{col}_listing_boxplot.png")
+        plt.show()
+
 #PART 5: SAVE THE CSV FILES
 missing_report_2.to_csv("listing_missing_value_report.csv", index=False)
 high_missing_2.to_csv("listing_high_missing.csv", index=False)
@@ -165,3 +231,5 @@ if numeric_features_2:
     numeric_distribution_summary_2.to_csv("listing_numeric_distribution_summary.csv")
 
 print("\nStructure and validation of Listing dataset are completed!")
+
+print(listing[col].dropna())
