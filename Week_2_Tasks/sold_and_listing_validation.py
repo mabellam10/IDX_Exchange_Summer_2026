@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 #STRUCTURE AND VALIDATION FOR SOLD'S FILES
 
 #Upload the combined and filtered csv file from Week 1
-sold = pd.read_csv("D:\\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1_Tasks\\sold.csv")
+sold = pd.read_csv("D:\\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1\\sold.csv")
 
 #PART 1: Dataset structure
 #Set up the structure of the dataset
@@ -120,7 +120,7 @@ print("\nStructure and validation of Sold dataset are completed!")
 #STRUCTURE AND VALIDATION FOR LISTING'S FILES
 
 #Upload the combined and filtered csv file from Week 1
-listing = pd.read_csv("D:\\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1_Tasks\\listing.csv")
+listing = pd.read_csv("D:\\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1\\listing.csv")
 
 #PART 1: Dataset structure
 #Set up the structure of the dataset
