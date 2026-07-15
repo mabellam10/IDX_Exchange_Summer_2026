@@ -1,8 +1,8 @@
 #PART 1: Fetch the mortgage rate data from FRED
 import pandas as pd
 
-listing = pd.read_csv("D:\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1_Tasks\\listing.csv")
-sold = pd.read_csv("D:\\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1_Tasks\\sold.csv")
+listing = pd.read_csv("D:\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1\\listing.csv")
+sold = pd.read_csv("D:\\MAIQUAN_Internships\\IDX_Exchange_Summer_2026\\Week_1\\sold.csv")
 
 url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US"
 mortgage = pd.read_csv(url, parse_dates=['observation_date'])
