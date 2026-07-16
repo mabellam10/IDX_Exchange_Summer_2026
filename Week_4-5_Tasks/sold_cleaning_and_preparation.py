@@ -108,10 +108,10 @@ if "BathroomsTotalInteger" in sold.columns:
     sold = sold[sold["BathroomsTotalInteger"] >= 0]
 
 print("\nRows before invalid value removal:", rows_before_removed)
-print("Rows after invalid value removal:", len(listing))
-print("Rows removed:", rows_before_removed - len(listing))
+print("Rows after invalid value removal:", len(sold))
+print("Rows removed:", rows_before_removed - len(sold))
 print("\nData type confirmation:")
-print(listing.dtypes)
+print(sold.dtypes)
 
 #Date Consistency Check
 print("\n---|DATE CONSISTENCY CHECK AND GEOGRAPHIC DATA CHECK|---")
