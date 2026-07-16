@@ -93,19 +93,19 @@ print("\n---|REMOVE INVALID NUMERIC VALUES|---")
 rows_before_removed = len(sold)
 
 if "ClosePrice" in sold.columns:
-    listing = sold[sold["ClosePrice"] > 0]
+    sold = sold[sold["ClosePrice"] > 0]
 
-if "LivingArea" in listing.columns:
-    listing = listing[listing["LivingArea"] > 0]
+if "LivingArea" in sold.columns:
+    sold = sold[sold["LivingArea"] > 0]
 
-if "DaysOnMarket" in listing.columns:
-    listing = listing[listing["DaysOnMarket"] >= 0]
+if "DaysOnMarket" in sold.columns:
+    sold = sold[sold["DaysOnMarket"] >= 0]
 
-if "BedroomsTotal" in listing.columns:
-    listing = listing[listing["BedroomsTotal"] >= 0]
+if "BedroomsTotal" in sold.columns:
+    sold = sold[sold["BedroomsTotal"] >= 0]
 
-if "BathroomsTotalInteger" in listing.columns:
-    listing = listing[listing["BathroomsTotalInteger"] >= 0]
+if "BathroomsTotalInteger" in sold.columns:
+    sold = sold[sold["BathroomsTotalInteger"] >= 0]
 
 print("\nRows before invalid value removal:", rows_before_removed)
 print("Rows after invalid value removal:", len(listing))
