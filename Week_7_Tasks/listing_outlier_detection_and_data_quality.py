@@ -96,4 +96,3 @@ print("\nSuccessfully saved deliverables:")
 print("1.listing_flagged.csv ")
 print("2.listing_filtered.csv ")
 print("3.listing_comparison.csv")
-
